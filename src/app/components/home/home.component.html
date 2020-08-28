@@ -1,0 +1,83 @@
+<body>
+
+
+<header class="cebecera">
+    <div class="wrap">
+        <img class="logo" src="../assets/img/viumi-logo.jpg">
+       
+        <input type="text" class="search" placeholder="¿Que te gustaria buscar en viumi?" >
+        
+
+        <nav class="menu1">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">#SoyViumer</a></li>
+                <li><a href="#">Contratar</a></li>
+            </ul>
+        </nav>
+
+    </div>
+    <div class="login" *ngIf="!identity">
+        <button class="btn-user" id="join-free"><a [routerLink]="['/Register']">Join Free</a></button>
+        <button class="btn-user"><a [routerLink]="['/Login']">Login</a></button>
+    </div>
+    <div class="login" *ngIf="identity">
+        {{identity.name}}
+       <button class="btn-user" (click)="logOut()">Cerrar Sesion</button>
+    </div>
+
+  
+</header>
+<div class="clear-fix"></div>
+<div class="menu2">
+    <nav>
+        <ul>
+            <li><a [routerLink]="['/Fotografia']">Fotografia</a></li>
+            <li><a [routerLink]="['/Video']">Video</a></li>
+            <li><a [routerLink]="['/Locucion']">Locución</a></li>
+            <li><a [routerLink]="['/Diseño']">Diseño</a></li>
+            <li><a [routerLink]="['/Desarrollo-web']">Desarrollo web</a></li>
+            <li><a [routerLink]="['/Manager']">Manager</a></li>
+            <li><a [routerLink]="['/Modelaje']">Modelaje</a></li>
+            <li><a [routerLink]="['/Maquillaje']">Maquillaje</a></li>
+            <li><a [routerLink]="['Register']">Unete a viumi</a></li>
+        </ul>
+    </nav>
+</div>
+<section class="containeer">
+    <h1>Comunidad Freelancer</h1>
+    <p>Viumi = Herramienta</p>
+    <p>NOS CONSIDERAMOS UN BANCO DE PERFILES CREATIVOS Y EMPRESARIALES DONDE NUESTRO PROPÓSITO ES CONECTARTE CON EL
+        PERFIL ADECUADO QUE ESTAS BUSCANDO</p>
+    <input type="text" placeholder="Buscar en viumi">
+
+</section>
+<div class="clear-fix"></div>
+<div class="post-photos">
+    <div class=" content" >
+       
+    </div>
+    <div class="content2">
+        
+    </div>
+    <div class="content3">
+        
+    </div>
+    <div class="content4">
+        
+    </div>
+    <div class=" content5" >
+       
+    </div>
+    <div class="content6">
+        
+    </div>
+</div>
+
+
+</body>
+
+
+
+
+

@@ -1,0 +1,89 @@
+
+
+
+
+
+<div *ngIf="identity">
+    <header class="cebecera">
+        <div class="wrap">
+            <img class="logo" src="../assets/img/viumi-logo.jpg">
+           
+            <input type="text" class="search" placeholder="¿Que te gustaria buscar en viumi?" >
+            
+    
+            <nav class="menu1">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">#SoyViumer</a></li>
+                    <li><a href="#">Contratar</a></li>
+                </ul>
+            </nav>
+    
+        </div>
+        <div class="login" *ngIf="!identity">
+            <button class="btn-user" id="join-free"><a [routerLink]="['/Register']">Join Free</a></button>
+            <button class="btn-user"><a [routerLink]="['/Login']">Login</a></button>
+        </div>
+        <div class="login" *ngIf="identity">
+            {{identity.name}}
+           <button class="btn-user" (click)="logOut()">Cerrar Sesion</button>
+        </div>
+      
+    </header>
+    <h1>Maquillaje</h1>
+</div>
+
+
+
+
+
+
+
+<div *ngIf="!identity">
+    <div class="img-fondo">
+        <a [routerLink]="['/Home']"><img src="../../../assets/img/viumi-logo.jpg" class="logo-viumi2"></a>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="form-user">
+    
+    
+        <div class="register2">
+            <h2>{{title}}</h2>
+            <div *ngIf="errorMessage">
+                <div class="alert alert-danger">
+                    <strong>Error</strong> {{errorMessage}}
+                </div>
+            </div>
+            <div *ngIf="identity">
+                <div class="alert alert-success col-md-9  mb-5 ">
+                    <strong>Has iniciado sesion</strong>
+                </div>
+            </div>
+    
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    
+                <div class="info-email">
+                    <p>
+                        <label for="surname">Email address:</label>
+                    </p>
+                    <p>
+                        <input type="email" #email name="email" [(ngModel)]="user.email" required>
+                    </p>
+                </div>
+                <div class="info-password">
+                    <p>
+                        <label for="password">Password:</label>
+                    </p>
+                    <p>
+                        <input type="password" #password name="password" [(ngModel)]="user.password" required>
+                    </p>
+                </div>
+                <input type="submit" value="Iniciar sesion">
+            </form>
+        </div>
+</div>
